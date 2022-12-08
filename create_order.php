@@ -67,7 +67,7 @@ if (isset($_Post['submit'])) {
 
             <div>
                 <label for="collection_address">collection address</label>
-                <select name="collection_address">
+                <select name="collection_address" id="collection_address">
                     <?php foreach ($addresses as $address) : ?>
                         <option value="<?= $address['id']; ?>"><?= $address['name']; ?></option>
                     <?php endforeach; ?>
@@ -76,7 +76,7 @@ if (isset($_Post['submit'])) {
 
             <div>
                 <label for="delivery_address">delivery address</label>
-                <select name="delivery_address">
+                <select name="delivery_address" id="delivery_address">
                     <?php foreach ($addresses as $address) : ?>
                         <option value="<?= $address['id']; ?>"><?= $address['name']; ?></option>
                     <?php endforeach; ?>

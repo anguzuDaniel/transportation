@@ -1,9 +1,6 @@
 <?php include_once "includes/header.php"; ?>
 
 <?php
-require_once "functions/Clients.php";
-require_once "functions/Orders.php";
-require_once "functions/Address.php";
 
 $conn = getConn();
 
@@ -15,7 +12,7 @@ $addresses = getAllAddresses($conn);
 if (isset($_POST['register_client'])) {
     $clientName = $_POST['name'];
     $clientEmail = $_POST['email'];
-    $clientLocation = $_POST['location'];
+    $clientLocation = $_POST['collection_address'];
 
     var_dump($_POST);
 
@@ -53,7 +50,7 @@ if (isset($_POST['register_client'])) {
             <div>
                 <label for="location">client address</label>
 
-                <select name="location">
+                <select name="location" id="location">
                     <?php foreach ($addresses as $address) : ?>
                         <option value="<?= $address['id']; ?>"><?= $address['name']; ?></option>
                     <?php endforeach; ?>

@@ -19,9 +19,12 @@ function addClient($conn, $name, $email, $location)
  * @param  mixed $column
  * @return array
  */
-function getAllClients($conn, $column = '*')
+function getAllClients($conn)
 {
-    $sql = "SELECT $column FROM clients";
+    $sql = "SELECT c.id, c.name, c.email, c.location, s.name as state_name
+            FROM clients AS c 
+            INNER JOIN states AS s 
+            ON c.id = s.id";
 
     $stmt = $conn->prepare($sql);
 
