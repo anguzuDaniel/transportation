@@ -1,19 +1,24 @@
 <?php
-
-function addClient($conn, $name, $email, $address)
+function addClient($conn, $name, $email, $location)
 {
-    $sql = "INSERT INTO `transportation`.`orders`(`id`,`name`,`email`,`address``)
-    VALUES (NULL, :name, :email, :address) ";
+    $sql = "INSERT INTO clients(`id`, `name`, `email`, `location`) VALUES (NULL, :name, :email, :location) ";
 
     $stmt = $conn->prepare($sql);
 
     $stmt->bindValue(':name', $name, PDO::PARAM_STR);
-    $stmt->bindValue(':email', $email, PDO::PARAM_INT);
-    $stmt->bindValue(':address', $address, PDO::PARAM_STR);
+    $stmt->bindValue(':email', $email, PDO::PARAM_STR);
+    $stmt->bindValue(':location', $location, PDO::PARAM_INT);
 
-    return $stmt->execute();
+    $stmt->execute();
 }
 
+/**
+ * getAllClients
+ *
+ * @param  mixed $conn
+ * @param  mixed $column
+ * @return array
+ */
 function getAllClients($conn, $column = '*')
 {
     $sql = "SELECT $column FROM clients";

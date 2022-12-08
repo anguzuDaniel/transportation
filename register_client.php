@@ -12,18 +12,19 @@ $clients = getAllClients($conn);
 // gets all the states from the database
 $addresses = getAllAddresses($conn);
 
-if (isset($_Post['submit'])) {
-    $orderName = $_Post['name'];
-    $clientEmail = $_Post['email'];
-    $clientLocation = $_Post['location'];
+if (isset($_POST['register_client'])) {
+    $clientName = $_POST['name'];
+    $clientEmail = $_POST['email'];
+    $clientLocation = $_POST['location'];
 
+    var_dump($_POST);
 
     $client = addClient($conn, $clientName, $clientEmail, $clientLocation);
 
     if (!$client) {
-        echo "Client was not add successfully, Please try again later";
+        $conn->errorInfo();
     } else {
-        header("Location: clients.php");
+        header("Location: clients_display.php");
     }
 }
 ?>
@@ -36,29 +37,30 @@ if (isset($_Post['submit'])) {
     <!-- main container | start -->
     <section class="conatainer">
 
-    
-        <form action="" method="post">
+
+        <form method="post">
 
             <div>
                 <label for="name">name</label>
-                <input type="text" name="name" id="name" required>
+                <input type="text" name="name" required>
             </div>
 
             <div>
-                <label for="size">email</label>
-                <input type="email" name="size" id="size" required>
+                <label for="email">email</label>
+                <input type="email" name="email" required>
             </div>
 
             <div>
-                <label for="collection_address">client address</label>
-                <select name="collection_address">
+                <label for="location">client address</label>
+
+                <select name="location">
                     <?php foreach ($addresses as $address) : ?>
                         <option value="<?= $address['id']; ?>"><?= $address['name']; ?></option>
                     <?php endforeach; ?>
                 </select>
             </div>
 
-            <button type="submit" name="submit">create client</button>
+            <button type="submit" name="register_client">register client</button>
         </form>
     </section>
     <!-- main container | start -->

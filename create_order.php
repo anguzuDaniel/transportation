@@ -41,7 +41,7 @@ if (isset($_Post['submit'])) {
 
             <select name="" id="">
                 <?php foreach ($clients as $client) : ?>
-                    <option value=""><?= $client['name'] ?></option>
+                    <option value="<?= $client['id']; ?>"><?= $client['name']; ?></option>
                 <?php endforeach; ?>
             </select>
 
