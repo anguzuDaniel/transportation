@@ -1,53 +1,55 @@
-<?php include_once "includes/header.php"; ?>]
+<?php include_once "includes/header.php"; ?>
 
-<!-- header navigation | start -->
-<?php include_once "includes/navigation.php"; ?>
-<!-- header navigation | end -->
+<main>
+    <!-- header navigation | start -->
+    <?php include_once "includes/navigation.php"; ?>
+    <!-- header navigation | end -->
 
-<!-- main container | start -->
-<section class="conatainer">
-    <h1 class="heading heading--primary">Dashboard</h1>
-
-    <!-- card displaying number -->
-    <?php include_once "includes/cards.php"; ?>
-    <!-- card displaying number -->
-    
+    <!-- main container | start -->
     <section class="conatainer">
+        <h1 class="heading heading--primary">Dashboard</h1>
 
-        <table border="1" width="100%">
-            <thead>
-                <tr>
-                    <td>id</td>
+        <!-- card displaying number -->
+        <?php include_once "includes/cards.php"; ?>
+        <!-- card displaying number -->
 
-                    <td>name</td>
+        <section class="conatainer">
 
-                    <td>size</td>
+            <table border="1" width="100%">
+                <thead>
+                    <tr>
+                        <td>id</td>
 
-                    <td>description</td>
+                        <td>name</td>
 
-                    <td>collection Address</td>
+                        <td>size</td>
 
-                    <td>delivery Address</td>
-                </tr>
-            </thead>
+                        <td>description</td>
 
-            <tbody>
-                <tr>
-                    <td>id</td>
+                        <td>collection Address</td>
 
-                    <td>name</td>
+                        <td>delivery Address</td>
+                    </tr>
+                </thead>
 
-                    <td>size</td>
+                <tbody>
+                    <tr>
+                        <td>id</td>
 
-                    <td>description</td>
+                        <td>name</td>
 
-                    <td>collection Address</td>
+                        <td>size</td>
 
-                    <td>delivery Address</td>
-                </tr>
-            </tbody>
-        </table>
+                        <td>description</td>
+
+                        <td>collection Address</td>
+
+                        <td>delivery Address</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
     </section>
-</section>
-<!-- main container | start -->
+    <!-- main container | start -->
+</main>
 <?php include_once "includes/footer.php"; ?>

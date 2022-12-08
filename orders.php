@@ -1,43 +1,45 @@
 <?php include_once "includes/header.php"; ?>
 
-<!-- header navigation | start -->
-<?php include_once "includes/navigation.php"; ?>
-<!-- header navigation | end -->
+<main>
+    <!-- header navigation | start -->
+    <?php include_once "includes/navigation.php"; ?>
+    <!-- header navigation | end -->
 
-<section class="conatainer">
+    <section class="conatainer">
 
-    <table border="1" width="100%">
-        <thead>
-            <tr>
-                <td>id</td>
+        <table border="1" width="100%">
+            <thead>
+                <tr>
+                    <td>id</td>
 
-                <td>name</td>
+                    <td>name</td>
 
-                <td>size</td>
+                    <td>size</td>
 
-                <td>description</td>
+                    <td>description</td>
 
-                <td>collection Address</td>
+                    <td>collection Address</td>
 
-                <td>delivery Address</td>
-            </tr>
-        </thead>
+                    <td>delivery Address</td>
+                </tr>
+            </thead>
 
-        <tbody>
-            <tr>
-                <td>id</td>
+            <tbody>
+                <tr>
+                    <td>id</td>
 
-                <td>name</td>
+                    <td>name</td>
 
-                <td>size</td>
+                    <td>size</td>
 
-                <td>description</td>
+                    <td>description</td>
 
-                <td>collection Address</td>
+                    <td>collection Address</td>
 
-                <td>delivery Address</td>
-            </tr>
-        </tbody>
-    </table>
-</section>
-<?php include_once "includes/footer.php"; ?>
+                    <td>delivery Address</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <main>
+        <?php include_once "includes/footer.php"; ?>

@@ -9,7 +9,7 @@ class Database
     {
         $db_host = 'localhost';
         $db_user = 'root';
-        $db_name = 'blog';
+        $db_name = 'transportation';
         $db_password = 'password';
 
         $dsn = 'mysql:host=' . $db_host . '; dbname=' . $db_name . ';charset=utf8';
