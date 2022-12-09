@@ -42,8 +42,8 @@ $orders = getAllOrders($conn);
                             <td><?= $client['name']; ?></td>
                             <td><?= $client['email']; ?></td>
                             <td><?= $client['state_name']; ?></td>
-                            <td><a href="<?= $client['id']; ?>">edit</a></td>
-                            <td><a href="<?= $client['id']; ?>">delete</a></td>
+                            <td><a href="editClient.php?id=<?= $client['id']; ?>">edit</a></td>
+                            <td><a href="deleteClient.php?id=<?= $client['id']; ?>">delete</a></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

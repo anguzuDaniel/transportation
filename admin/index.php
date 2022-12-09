@@ -1,5 +1,14 @@
 <?php include_once "includes/header.php"; ?>
 
+<?php
+$conn = getConn();
+
+$clients = getAllClients($conn);
+
+$orders = getAllOrders($conn);
+?>
+
+
 <main>
     <!-- header navigation | start -->
     <?php include_once "includes/navigation.php"; ?>

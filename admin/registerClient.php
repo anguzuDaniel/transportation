@@ -9,21 +9,29 @@ $clients = getAllClients($conn);
 // gets all the states from the database
 $addresses = getAllAddresses($conn);
 
-if (isset($_POST['register_client'])) {
+$clientName = "";
+$clientEmail = "";
+$clientLocation = "";
+
+
+if (isset($_POST['save'])) {
     $clientName = $_POST['name'];
     $clientEmail = $_POST['email'];
-    $clientLocation = $_POST['collection_address'];
+    $clientLocation = $_POST['location'];
 
-    var_dump($_POST);
+    $stmt = addClient($conn, $clientName, $clientEmail, $clientLocation);
 
-    $client = addClient($conn, $clientName, $clientEmail, $clientLocation);
-
-    if (!$client) {
+    if (!$stmt) {
         $conn->errorInfo();
     } else {
-        header("Location: clients_display.php");
+
+        header("Location: showClients.php");
     }
 }
+
+$btnName = "register client";
+
+
 ?>
 
 <main>
@@ -34,17 +42,16 @@ if (isset($_POST['register_client'])) {
     <!-- main container | start -->
     <section class="conatainer">
 
-
         <form method="post">
 
             <div>
                 <label for="name">name</label>
-                <input type="text" name="name" required>
+                <input type="text" name="name" value="<?= $clientName; ?>" required>
             </div>
 
             <div>
                 <label for="email">email</label>
-                <input type="email" name="email" required>
+                <input type="email" name="email" value="<?= $clientEmail; ?>" required>
             </div>
 
             <div>
@@ -57,7 +64,7 @@ if (isset($_POST['register_client'])) {
                 </select>
             </div>
 
-            <button type="submit" name="register_client">register client</button>
+            <button type="submit" name="save"><?= $btnName; ?></button>
         </form>
     </section>
     <!-- main container | start -->
