@@ -13,7 +13,7 @@ if (isset($_GET['id'])) {
     } else {
         echo "Client delete from records";
 
-        header("Location: showClients.php");
+        header("Location: index.php");
     }
 }
 ?>

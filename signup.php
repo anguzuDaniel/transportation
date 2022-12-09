@@ -12,7 +12,13 @@ if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $user = createUser($conn, $firstName, $lastName, $email, $password);
+    $stmt = createUser($conn, $firstName, $lastName, $email, $password);
+
+    if (!$stmt) {
+        $conn->errorInfo();
+    } else {
+        header("Location: index.php");
+    }
 }
 
 ?>
@@ -34,7 +40,7 @@ if (isset($_POST['submit'])) {
 
         <div>
             <label for="email">email</label>
-            <input type="email" name="size" id="size" required>
+            <input type="email" name="email" id="size" required>
         </div>
 
         <div>

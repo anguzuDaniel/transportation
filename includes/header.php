@@ -10,4 +10,5 @@
 
 <body>
     <?php
+    session_start();
     require_once "config/dbConfig.php";
