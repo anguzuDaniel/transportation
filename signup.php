@@ -24,34 +24,37 @@ if (isset($_POST['submit'])) {
 ?>
 
 <!-- main container | start -->
-<section class="login_wrapper">
-    <h1 class="heading heading--primary">Sign up</h1>
+<section class="login-wrapper">
 
-    <form method="post">
-        <div>
-            <label for="first_name">first name</label>
-            <input type="text" name="first_name" id="size" required>
-        </div>
+    <div class="login-container">
+        <h1 class="heading heading--primary">Sign up</h1>
 
-        <div>
-            <label for="last_name">last name</label>
-            <input type="text" name="last_name" id="size" required>
-        </div>
+        <form method="post">
+            <div>
+                <label for="first_name">first name</label>
+                <input type="text" name="first_name" id="size" required>
+            </div>
 
-        <div>
-            <label for="email">email</label>
-            <input type="email" name="email" id="size" required>
-        </div>
+            <div>
+                <label for="last_name">last name</label>
+                <input type="text" name="last_name" id="size" required>
+            </div>
 
-        <div>
-            <label for="password">password</label>
-            <input type="password" name="password" id="size" required>
-        </div>
+            <div>
+                <label for="email">email</label>
+                <input type="email" name="email" id="size" required>
+            </div>
 
-        <button type="submit" name="submit">Sign up</button>
-    </form>
+            <div>
+                <label for="password">password</label>
+                <input type="password" name="password" id="size" required>
+            </div>
 
-    <a href="index.php">login</a>
+            <button type="submit" name="submit" class="btn btn--primary">Sign up</button>
+        </form>
+
+        <a href="index.php">login</a>
+    </div>
 </section>
 <!-- main container | start -->
 <?php include_once "includes/footer.php"; ?>

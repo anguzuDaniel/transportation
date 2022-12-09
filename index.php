@@ -22,26 +22,29 @@ if (isset($_POST['submit'])) {
 ?>
 
 <!-- main container | start -->
-<section class="login_wrapper">
-    <h1 class="heading heading--primary">Login</h1>
+<section class="login-wrapper">
 
-    <form action="" method="post">
-        <div>
-            <label for="email">email</label>
-            <input type="email" name="email" id="size" required>
-        </div>
+    <div class="login-container">
+        <h1 class="heading heading--primary">Login</h1>
 
-        <div>
-            <label for="password">password</label>
-            <input type="password" name="password" id="size" required>
-        </div>
+        <form method="post">
+            <div>
+                <label for="email">email</label>
+                <input type="email" name="email" id="size" required>
+            </div>
 
-        <p class="paragraph paragraph--primary"><a href="changePassword.php">Forgot password</a></p>
+            <div>
+                <label for="password">password</label>
+                <input type="password" name="password" id="size" required>
+            </div>
 
-        <button type="submit" name="submit" class="btn btn--primary">login</button>
-    </form>
+            <p class="paragraph paragraph--primary"><a href="changePassword.php">Forgot password</a></p>
 
-    <a href="signup.php">Sign up</a>
+            <button type="submit" name="submit" class="btn btn--primary">login</button>
+        </form>
+
+        <a href="signup.php">Sign up</a>
+    </div>
 </section>
 <!-- main container | start -->
 
