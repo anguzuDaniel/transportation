@@ -1,28 +1,45 @@
 <?php include_once "includes/header.php"; ?>
 
+<?php
+require_once "functions/Auth.php";
+require_once "functions/User.php";
+
+$conn = getConn();
+
+if (isset($_POST['submit'])) {
+    $firstName = $_POST['first_name'];
+    $lastName = $_POST['last_name'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $user = createUser($conn, $firstName, $lastName, $email, $password);
+}
+
+?>
+
 <!-- main container | start -->
 <section class="conatainer">
     <h1 class="heading heading--primary">Sign up</h1>
 
-    <form action="" method="post">
+    <form method="post">
         <div>
-            <label for="size">first name</label>
-            <input type="text" name="size" id="size" required>
+            <label for="first_name">first name</label>
+            <input type="text" name="first_name" id="size" required>
         </div>
 
         <div>
-            <label for="size">last name</label>
-            <input type="text" name="size" id="size" required>
+            <label for="last_name">last name</label>
+            <input type="text" name="last_name" id="size" required>
         </div>
 
         <div>
-            <label for="size">email</label>
+            <label for="email">email</label>
             <input type="email" name="size" id="size" required>
         </div>
 
         <div>
-            <label for="size">password</label>
-            <input type="password" name="size" id="size" required>
+            <label for="password">password</label>
+            <input type="password" name="password" id="size" required>
         </div>
 
         <button type="submit" name="submit">Sign up</button>

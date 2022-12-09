@@ -12,3 +12,5 @@
     <?php
     require_once "../config/dbConfig.php";
     require_once "includes/init.php";
+    require_once "../functions/Auth.php";
+    requireLogin();

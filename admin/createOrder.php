@@ -1,9 +1,9 @@
 <?php require_once "includes/header.php"; ?>
 
 <?php
-require_once "functions/Clients.php";
-require_once "functions/Orders.php";
-require_once "functions/Address.php";
+require_once "../functions/Clients.php";
+require_once "../functions/Orders.php";
+require_once "../functions/Address.php";
 
 $conn = getConn();
 
@@ -27,7 +27,7 @@ if (isset($_POST['save'])) {
     if (!$order) {
         echo "Order was not processed, please try again later";
     } else {
-        header("Location: orders.php");
+        header("Location: showOrders.php");
     }
 }
 ?>

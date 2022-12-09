@@ -1,6 +1,21 @@
 <?php
 
 
+/**
+ * createOrder
+ * adds/creates an order in the database
+ * 
+ * @param  mixed $conn
+ * @param  mixed $name
+ * @param  mixed $size
+ * @param  mixed $description
+ * @param  mixed $dateOfDeparture
+ * @param  mixed $dateOfArrival
+ * @param  mixed $clientName
+ * @param  mixed $collectionAddress
+ * @param  mixed $deliveryAddress
+ * @return $stmt->execute()
+ */
 function createOrder($conn, $name, $size, $description, $dateOfDeparture, $dateOfArrival, $clientName, $collectionAddress, $deliveryAddress)
 {
     $sql = "INSERT INTO orders(`id`, `name`, `size`, `description`, `time_of_departure`, `time_of_arrival`, `client_orders`, `collection_address`, `delivery_address`)
@@ -22,30 +37,29 @@ function createOrder($conn, $name, $size, $description, $dateOfDeparture, $dateO
 
 function updateOrder($conn, $id, $name, $size, $description, $dateOfDeparture, $dateOfArrival, $clientName, $collectionAddress, $deliveryAddress)
 {
-    $sql = "UPDATE orders SET
-        name = :orderName, 
-        size = :orderSize, 
-        description = :orderDescription, 
-        time_of_departure = :timeOfDeparture,
-        time_of_arrival = :timeOfArrival,
-        client_orders = :clientName,
-        collection_address :collectionAddress,
-        delivery_address = :deliveryAddress 
-        WHERE id = :oid ";
+    $sql = "UPDATE orders SET name = :orderName, 
+        `size` = :orderSize, 
+        `description` = :orderDescription, 
+        `time_of_departure` = :timeOfDeparture,
+        `time_of_arrival` = :timeOfArrival,
+        `client_orders` = :clientName,
+        `collection_address` = :collectionAddress,
+        `delivery_address` = :deliveryAddress 
+        WHERE id = :id ";
 
     $stmt = $conn->prepare($sql);
 
-    $stmt->bindValue(':orderName', $name, PDO::PARAM_STR);
-    $stmt->bindValue(':orderSize', $size, PDO::PARAM_INT);
-    $stmt->bindValue(':orderDescription', $description, PDO::PARAM_STR);
-    $stmt->bindValue(':timeOfDeparture', $dateOfDeparture, PDO::PARAM_STR);
-    $stmt->bindValue(':timeOfArrival', $dateOfArrival, PDO::PARAM_STR);
-    $stmt->bindValue(':client_orders', $clientName, PDO::PARAM_INT);
-    $stmt->bindValue(':collectionAddress', $collectionAddress, PDO::PARAM_STR);
-    $stmt->bindValue(':deliveryAddress', $deliveryAddress, PDO::PARAM_STR);
-    $stmt->bindValue(':oid', $id, PDO::PARAM_INT);
+    $stmt->bindParam(':orderName', $name);
+    $stmt->bindParam(':orderSize', $size);
+    $stmt->bindParam(':orderDescription', $description, PDO::PARAM_STR);
+    $stmt->bindParam(':timeOfDeparture', $dateOfDeparture, PDO::PARAM_STR);
+    $stmt->bindParam(':timeOfArrival', $dateOfArrival, PDO::PARAM_STR);
+    $stmt->bindParam(':clientName', $clientName, PDO::PARAM_INT);
+    $stmt->bindParam(':collectionAddress', $collectionAddress, PDO::PARAM_INT);
+    $stmt->bindParam(':deliveryAddress', $deliveryAddress, PDO::PARAM_INT);
+    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
 
-    $stmt->execute();
+    return $stmt->execute();
 }
 
 function getAllOrders($conn)
@@ -104,5 +118,5 @@ function deleteOrder($conn, $id)
 
     $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 
-    $stmt->execute();
+    return $stmt->execute();
 }

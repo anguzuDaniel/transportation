@@ -6,6 +6,7 @@
                     <li><a href="registerClient.php">Register client</a></li>
                     <li><a href="showClients.php">Show clients</a></li>
                     <li><a href="registerClient.php">Create client</a></li>
+                    <li><a href="createOrder.php">Create order</a></li>
                 </ul>
             </nav>
         </header>

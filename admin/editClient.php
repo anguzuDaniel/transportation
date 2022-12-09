@@ -18,12 +18,12 @@ if (isset($_GET['id'])) {
     }
 }
 
-if (isset($_POST['register_client'])) {
+if (isset($_POST['save'])) {
     $clientName = $_POST['name'];
     $clientEmail = $_POST['email'];
     $clientLocation = $_POST['collection_address'];
 
-    $stmt = editClient($conn, $clientName, $clientEmail, $clientLocation, $id);
+    $stmt = updateClient($conn, $clientName, $clientEmail, $clientLocation, $id);
 
     if (!$stmt) {
         $stmt->errorInfo();
@@ -59,9 +59,9 @@ $btnName = "Edit client";
             </div>
 
             <div>
-                <label for="location">client address</label>
+                <label for="collection_address">client address</label>
 
-                <select name="location" id="location">
+                <select name="collection_address" id="location">
                     <option value="<?= $row['location']; ?>" selected><?= $row['state_name']; ?></option>
                     <?php foreach ($addresses as $address) : ?>
                         <option value="<?= $address['id']; ?>"><?= $address['name']; ?></option>

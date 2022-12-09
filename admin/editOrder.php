@@ -37,7 +37,7 @@ if (isset($_POST['save'])) {
     if (!$stmt) {
         echo "Order was not updated successfully, please try again later.";
     } else {
-        header("Location: orders.php");
+        header("Location: showOrders.php");
     }
 }
 ?>

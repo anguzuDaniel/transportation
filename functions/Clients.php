@@ -12,12 +12,12 @@ function addClient($conn, $name, $email, $location)
     return $stmt->execute();
 }
 
-function editClient($conn, $name, $email, $location, $id)
+function updateClient($conn, $name, $email, $location, $id)
 {
-    $sql = "UPDATE clients 
-            SET name = :name, 
-            email = :email, 
-            location = :location
+    $sql = "UPDATE clients
+            SET `name` = :name, 
+            `email` = :email, 
+            `location` = :location
             WHERE id = :id ";
 
     $stmt = $conn->prepare($sql);
@@ -27,7 +27,7 @@ function editClient($conn, $name, $email, $location, $id)
     $stmt->bindValue(':location', $location, PDO::PARAM_INT);
     $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 
-    $stmt->execute();
+    return $stmt->execute();
 }
 
 function deleteClient($conn, $id)

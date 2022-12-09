@@ -1,21 +1,34 @@
 <?php include_once "includes/header.php"; ?>
 
+<?php
+require_once "functions/Auth.php";
+require_once "functions/User.php";
+
+if (isset($_POST['submit'])) {
+    $email = $_POST['email'];
+    $password = $_POST['name'];
+
+    $user = authenticateUser($conn, $email, $password);
+}
+
+?>
+
 <!-- main container | start -->
 <section class="conatainer">
     <h1 class="heading heading--primary">Login</h1>
 
     <form action="" method="post">
         <div>
-            <label for="size">email</label>
+            <label for="email">email</label>
             <input type="email" name="size" id="size" required>
         </div>
 
         <div>
-            <label for="size">password</label>
+            <label for="password">password</label>
             <input type="password" name="size" id="size" required>
         </div>
 
-        <p class="paragraph paragraph--primary"><a href="change_password.php">Forgot password</a></p>
+        <p class="paragraph paragraph--primary"><a href="changePassword.php">Forgot password</a></p>
 
         <button type="submit" name="submit">login</button>
     </form>
