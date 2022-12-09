@@ -12,16 +12,17 @@ $clients = getAllClients($conn);
 // gets all the states from the database
 $addresses = getAllAddresses($conn);
 
-if (isset($_Post['submit'])) {
-    $orderName = $_Post['name'];
-    $orderSize = $_Post['size'];
-    $description = $_Post['description'];
-    $departureTime = $_Post['departure_time'];
-    $arrivalTime = $_Post['arrival_time'];
-    $collectionAddress = $_Post['collection_address'];
-    $deliveryAddress = $_Post['deliveryAddress'];
+if (isset($_POST['save'])) {
+    $orderName = $_POST['name'];
+    $orderSize = $_POST['size'];
+    $description = $_POST['description'];
+    $departureTime = $_POST['departure_time'];
+    $arrivalTime = $_POST['arrival_time'];
+    $clientName = $_POST['client_name'];
+    $collectionAddress = $_POST['collection_address'];
+    $deliveryAddress = $_POST['delivery_address'];
 
-    $order = createOrder($conn, $orderName, $orderSize, $description, $departureTime, $arrivalTime, $collectionAddress, $deliveryAddress);
+    $order = createOrder($conn, $orderName, $orderSize, $description, $departureTime, $arrivalTime, $clientName, $collectionAddress, $deliveryAddress);
 
     if (!$order) {
         echo "Order was not processed, please try again later";
@@ -37,9 +38,10 @@ if (isset($_Post['submit'])) {
     <!-- header navigation | end -->
 
     <section class="conatainer">
-        <form action="" method="post">
+        <form method="post">
 
-            <select name="" id="">
+            <label for="client_name">client name</label>
+            <select name="client_name" id="" required>
                 <?php foreach ($clients as $client) : ?>
                     <option value="<?= $client['id']; ?>"><?= $client['name']; ?></option>
                 <?php endforeach; ?>
@@ -88,7 +90,7 @@ if (isset($_Post['submit'])) {
                 <textarea name="description" id="" cols="30" rows="10" required style="resize: none;"></textarea>
             </div>
 
-            <button type="submit" name="submit">submit order</button>
+            <button type="submit" name="save">submit order</button>
         </form>
     </section>
 </main>
