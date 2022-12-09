@@ -1,11 +1,21 @@
 <?php include_once "includes/header.php"; ?>
 
 <?php
+require_once "../functions/Search.php";
+
 $conn = getConn();
 
 $clients = getAllClients($conn);
 
 $orders = getAllOrders($conn);
+
+
+if (isset($_POST['search'])) {
+    $tag = $_POST['search_tags'];
+
+    $searchResult = searchTags($conn, $tag);
+}
+
 ?>
 
 <main>
@@ -23,11 +33,28 @@ $orders = getAllOrders($conn);
 
         <section class="conatainer">
 
+
+            <form method="post">
+                <input type="search" name="search_tags" placeholder="search using key words">
+                <button type="submit" name="search">search</button>
+            </form>
+            <div class="search_result">
+                <?php if (empty($searchResult)) : ?>
+                    <p>No results with that tag, Search using a valid tag.</p>
+                <?php else : ?>
+                    <ul>
+                        <?php foreach ($searchResult as $result) : ?>
+                            <li><?= $result['name']; ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
+            </div>
+
             <table border="1" width="100%">
                 <thead>
                     <tr>
                         <td>id</td>
-                        <td>name of client</td>
+                        <td>Ordered by</td>
                         <td>order</td>
                         <td>size</td>
                         <td>description</td>

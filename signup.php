@@ -24,7 +24,7 @@ if (isset($_POST['submit'])) {
 ?>
 
 <!-- main container | start -->
-<section class="conatainer">
+<section class="login_wrapper">
     <h1 class="heading heading--primary">Sign up</h1>
 
     <form method="post">

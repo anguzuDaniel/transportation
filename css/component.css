@@ -1,0 +1,9 @@
+.btn {
+    display: inline-block;
+    border: none;
+}
+
+.btn--primary {
+    background-color: blue;
+    color: white;
+}
