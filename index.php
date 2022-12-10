@@ -19,31 +19,33 @@ if (isset($_POST['submit'])) {
     }
 }
 
+$link = 'signup.php';
+$link_name = "Sign up";
 ?>
+
+<?php require_once "includes/navigation.php"; ?>
 
 <!-- main container | start -->
 <section class="login-wrapper">
 
-    <div class="mx-auto" style="width: 300px;">
+    <div class="mx-auto" style="width: 400px;">
         <h1 class="h1">Login</h1>
 
-        <form method="post">
-            <div class="form-group">
-                <label for="email" class="col-form-label">email</label>
-                <input type="email" name="email" required class="form-control">
+        <form method="post" class="my-4">
+            <div class="form-group mb-3">
+                <label for="email" class="col-form-label mb-3">Email</label>
+                <input type="email" name="email" required class="form-control  py-4 px-4" placeholder="Email">
             </div>
 
-            <div class="form-group">
-                <label for="password" class="col-form-label">password</label>
-                <input type="password" name="password" class="form-control" required>
+            <div class="form-group mb-3">
+                <label for="password" class="col-form-label mb-3">Password</label>
+                <input type="password" name="password" class="form-control py-4 px-4" required placeholder="Password">
             </div>
 
-            <p class="paragraph paragraph--primary"><a href="changePassword.php">Forgot password</a></p>
+            <p class="p"><a href="changePassword.php">Forgot password?</a></p>
 
-            <button type="submit" name="submit" class="btn btn-primary btn-block btn-lg btn-out-primary">login</button>
+            <button type="submit" name="submit" class="btn btn-primary btn-lg btn-out-primary py-3 px-5 w-100 my-3">login</button>
         </form>
-
-        <a href="signup.php">Sign up</a>
     </div>
 </section>
 <!-- main container | start -->

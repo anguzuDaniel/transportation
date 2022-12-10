@@ -3,3 +3,13 @@
 @import "_base.css";
 @import "_component.css";
 @import "_login.css";
+
+
+.admin-wrapper {
+    margin-top: 10rem;
+    padding-inline: 2rem;
+}
+
+label {
+    font-weight: bold;
+}

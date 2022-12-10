@@ -18,42 +18,26 @@ if (isset($_POST['search'])) {
 
 ?>
 
-<main>
-    <!-- header navigation | start -->
-    <?php include_once "includes/navigation.php"; ?>
-    <!-- header navigation | end -->
 
-    <!-- main container | start -->
-    <section class="mx-5 my-5">
-        <h1>Dashboard</h1>
+<!-- header navigation | start -->
+<?php include_once "includes/navigation.php"; ?>
+<!-- header navigation | end -->
 
-        <!-- card displaying number -->
-        <?php include_once "includes/cards.php"; ?>
-        <!-- card displaying number -->
+<!-- main container | start -->
+<section class="mx-5">
+    <h1 class="display-1 my-5 font-weight-bold">Dashboard</h1>
 
-        <section class="conatainer">
+    <!-- card displaying number -->
+    <?php include_once "includes/cards.php"; ?>
+    <!-- card displaying number -->
 
-
-            <form method="post" class="form-inline">
-                <input type="search" name="search_tags" class="form-control" placeholder="search using key words">
-                <button type="submit" name="search" class="btn btn-outline-primary my-2 my-sm-0">search</button>
-            </form>
-
-            <div class="search_result">
-                <?php if (empty($searchResult)) : ?>
-                    <p>No results with that tag, Search using a valid tag.</p>
-                <?php else : ?>
-                    <ul>
-                        <?php foreach ($searchResult as $result) : ?>
-                            <li><?= $result['name']; ?></li>
-                        <?php endforeach; ?>
-                    </ul>
-                <?php endif; ?>
-            </div>
+    <section class="conatainer">
+        <div>
+            <?php require_once "includes/navigation.php"; ?>
 
             <div class="table-responsive my-5">
-                <table border="1" width="100%" class="table table-bordered">
-                    <thead class="table-dark">
+                <table id="dtBasicExample" class="table bg-light"  width="100%">
+                    <thead>
                         <tr>
                             <td scope="col" class="py-4">id</td>
                             <td scope="col" class="py-4">Ordered by</td>
@@ -67,9 +51,7 @@ if (isset($_POST['search'])) {
                             <td colspan="2" scope="col" class="py-4">operations</td>
                         </tr>
                     </thead>
-
-                    <tbody class="table-stripped">
-
+                    <tbody>
                         <?php foreach ($orders as $order) : ?>
                             <tr>
                                 <td scope="row" class="py-4"><?= $order['id']; ?></td>
@@ -81,9 +63,10 @@ if (isset($_POST['search'])) {
                                 <td scope="row" class="py-4"><?= $order['time_of_arrival']; ?></td>
                                 <td scope="row" class="py-4"><?= $order['collection_address']; ?></td>
                                 <td scope="row" class="py-4"><?= $order['state_name']; ?></td>
-                                <td scope="row" class="py-4"><a href="editOrder.php?id=<?= $order['id']; ?>" class="btn btn-primary btn-lg"><em class="fa-regular fa-pen-to-square"></em></a></td>
+                                <td scope="row" class="py-4" style="tex-align: center;"><a href="editOrder.php?id=<?= $order['id']; ?>" class="btn btn-primary btn-lg"><em class="fa-regular fa-pen-to-square"></em></a></td>
                                 <td scope="row" class="py-4"><button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#deleteModal"><em class="fa-regular fa-trash-can"></em></button></td>
                             </tr>
+
 
                             <!-- delete modal -->
                             <div class="modal fade" id="deleteModal" aria-labelledby="deleteModalLabel" aria-hidden="true" tabindex="-1" role="dialog">
@@ -108,15 +91,15 @@ if (isset($_POST['search'])) {
                                     </div>
                                 </div>
                             </div>
-                            <!-- delete modal -->
                         <?php endforeach; ?>
+                        <!-- delete modal -->
                     </tbody>
                 </table>
+
+
             </div>
-        </section>
+        </div>
     </section>
-    <!-- main container | start -->
-
-
-</main>
+</section>
+<!-- main container | start -->
 <?php include_once "includes/footer.php"; ?>

@@ -38,40 +38,39 @@ if (isset($_POST['save'])) {
 $btnName = "Edit client";
 ?>
 
-<main>
-    <!-- header navigation | start -->
-    <?php include_once "includes/navigation.php"; ?>
-    <!-- header navigation | end -->
+<!-- header navigation | start -->
+<?php include_once "includes/navigation.php"; ?>
+<!-- header navigation | end -->
 
-    <!-- main container | start -->
-    <section class="mx-5 my-5">
+<!-- main container | start -->
+<section class="mx-5 my-5">
+    <h1 class="display-1 my-5 font-weight-bold">Edit Client</h1>
 
-        <form method="post">
+    <form method="post" class="bg-light p-5">
 
-            <div class="form-group">
-                <label for="name" class="col-form-label">name</label>
-                <input type="text" name="name" value="<?php echo $row['name']; ?>" class="form-control" required>
-            </div>
+        <div class="form-group">
+            <label for="name" class="col-form-label">name</label>
+            <input type="text" name="name" value="<?php echo $row['name']; ?>" class="form-control py-4" required>
+        </div>
 
-            <div class="form-group">
-                <label for="email" class="col-form-label">email</label>
-                <input type="email" name="email" class="form-control" value="<?php echo $row['email']; ?>" required>
-            </div>
+        <div class="form-group">
+            <label for="email" class="col-form-label">email</label>
+            <input type="email" name="email" class="form-control py-4" value="<?php echo $row['email']; ?>" required>
+        </div>
 
-            <div class="form-group">
-                <label for="collection_address" class="col-form-label">client address</label>
-                <select name="collection_address" id="location" class="form-control">
-                    <option value="<?= $row['location']; ?>" selected><?= $row['state_name']; ?></option>
-                    <?php foreach ($addresses as $address) : ?>
-                        <option value="<?= $address['id']; ?>"><?= $address['name']; ?></option>
-                    <?php endforeach; ?>
-                </select>
-            </div>
+        <div class="form-group">
+            <label for="collection_address" class="col-form-label">client address</label>
+            <select name="collection_address" id="location" class="form-control py-4">
+                <option value="<?= $row['location']; ?>" selected><?= $row['state_name']; ?></option>
+                <?php foreach ($addresses as $address) : ?>
+                    <option value="<?= $address['id']; ?>"><?= $address['name']; ?></option>
+                <?php endforeach; ?>
+            </select>
+        </div>
 
-            <button type="submit" name="save" class="btn btn-primary btn-block btn-lg btn-out-primary"><?php echo $btnName; ?></button>
-        </form>
+        <button type="submit" name="save" class="btn btn-primary btn-block btn-lg btn-out-primary py-3 px-5 mt-4"><?php echo $btnName; ?></button>
+    </form>
 
-    </section>
-    <!-- main container | start -->
-</main>
+</section>
+<!-- main container | start -->
 <?php include_once "includes/footer.php"; ?>

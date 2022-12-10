@@ -42,45 +42,51 @@ if (isset($_POST['save'])) {
 }
 ?>
 
-<main>
-    <!-- header navigation | start -->
-    <?php include_once "./includes/navigation.php"; ?>
-    <!-- header navigation | end -->
+<!-- header navigation | start -->
+<?php include_once "./includes/navigation.php"; ?>
+<!-- header navigation | end -->
 
-    <section class="conatainer">
-        <form method="post">
+<section class="mx-5 my-5">
+    <h1 class="display-1 my-5 font-weight-bold">Edit Order</h1>
 
-            <?php foreach ($order as $o) : ?>
-                <label for="client_name">client name</label>
-                <select name="client_name" id="" required>
-                    <?php foreach ($clients as $client) : ?>
-                        <option value="<?= $client['id']; ?>"><?= $client['name']; ?></option>
-                    <?php endforeach; ?>
-                </select>
+    <form method="post" class="bg-light p-5">
 
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" name="name" id="name" required value="<?= $o['name']; ?>">
+        <?php foreach ($order as $o) : ?>
+            <label class="col-form-label" for="client_name">client name</label>
+            <select name="client_name" class="form-control py-4 px-4" required>
+                <?php foreach ($clients as $client) : ?>
+                    <option value="<?= $client['id']; ?>"><?= $client['name']; ?></option>
+                <?php endforeach; ?>
+            </select>
+
+            <div class="row mb-5">
+                <div class="form-group col-sm">
+                    <label class="col-form-label" for="name">Name</label>
+                    <input class="form-control py-4 px-4" type="text" name="name" id="name" required value="<?= $o['name']; ?>">
                 </div>
 
-                <div class="form-group">
-                    <label for="size">Size</label>
-                    <input type="text" name="size" id="size" required value="<?= $o['size']; ?>">
+                <div class="form-group col-sm">
+                    <label class="col-form-label" for="size">Size</label>
+                    <input class="form-control py-4 px-4" type="text" name="size" id="size" required value="<?= $o['size']; ?>">
+                </div>
+            </div>
+
+            <div class="row mb-5">
+                <div class="form-group col-sm">
+                    <label class="col-form-label" for="departure_time">departure time</label>
+                    <input class="form-control py-4 px-4" type="date" name="departure_time" id="size" required value="<?= $o['time_of_departure']; ?>">
                 </div>
 
-                <div class="form-group">
-                    <label for="departure_time">departure time</label>
-                    <input type="date" name="departure_time" id="size" required value="<?= $o['time_of_departure']; ?>">
+                <div class="form-group col-sm">
+                    <label class="col-form-label" for="arrival_time">arrival time</label>
+                    <input class="form-control py-4 px-4" type="date" name="arrival_time" id="description" required value="<?= $o['time_of_arrival']; ?>">
                 </div>
+            </div>
 
-                <div class="form-group">
-                    <label for="arrival_time">arrival time</label>
-                    <input type="date" name="arrival_time" id="description" required value="<?= $o['time_of_arrival']; ?>">
-                </div>
-
-                <div class="form-group">
-                    <label for="collection_address">collection address</label>
-                    <select name="collection_address" id="collection_address">
+            <div class="row mb-5">
+                <div class="form-group col-sm">
+                    <label class="col-form-label" for="collection_address">collection address</label>
+                    <select name="collection_address" class="form-control py-4 px-4">
                         <option value="<?= $o['collection_address']; ?>"><?= $o['collection_address']; ?></option>
                         <?php foreach ($addresses as $address) : ?>
                             <option value="<?= $address['id']; ?>"><?= $address['name']; ?></option>
@@ -88,25 +94,26 @@ if (isset($_POST['save'])) {
                     </select>
                 </div>
 
-                <div class="form-group">
-                    <label for="delivery_address">delivery address</label>
-                    <select name="delivery_address" id="delivery_address">
+                <div class="form-group col-sm">
+                    <label class="col-form-label" for="delivery_address">delivery address</label>
+                    <select name="delivery_address" class="form-control py-4 px-4">
                         <option value="<?= $o['delivery_address']; ?>"><?= $o['delivery_address']; ?></option>
                         <?php foreach ($addresses as $address) : ?>
                             <option value="<?= $address['id']; ?>"><?= $address['name']; ?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>
+            </div>
 
-                <div class="form-group">
-                    <label for="description">description</label>
-                    <textarea name="description" id="" cols="30" rows="10" required style="resize: none;"><?= $o['description']; ?></textarea>
+            <div class="row mb-5">
+                <div class="form-group col-sm">
+                    <label class="col-form-label" for="description">description</label>
+                    <textarea name="description" id="" cols="30" rows="10" class="form-control py-4 px-4" required style="resize: none;"><?= $o['description']; ?></textarea>
                 </div>
+            </div>
 
-                <button type="submit" name="save" class="btn btn--primary">edit order</button>
-            <?php endforeach; ?>
-        </form>
-    </section>
-</main>
-
+            <button type="submit" name="save" class="btn btn--primary">edit order</button>
+        <?php endforeach; ?>
+    </form>
+</section>
 <?php include_once "includes/footer.php"; ?>
