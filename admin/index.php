@@ -25,7 +25,7 @@ if (isset($_POST['search'])) {
 
     <!-- main container | start -->
     <section class="conatainer">
-        <h1 class="heading heading--primary">Dashboard</h1>
+        <h1>Dashboard</h1>
 
         <!-- card displaying number -->
         <?php include_once "includes/cards.php"; ?>
@@ -34,9 +34,9 @@ if (isset($_POST['search'])) {
         <section class="conatainer">
 
 
-            <form method="post" class="search-group">
+            <form method="post" class="form-inline my-2 my-lg-0">
                 <input type="search" name="search_tags" class="form-control" placeholder="search using key words">
-                <button type="submit" name="search" class="btn btn-primary">search</button>
+                <button type="submit" name="search" class="btn btn-outline-primary my-2 my-sm-0">search</button>
             </form>
 
             <div class="search_result">
@@ -51,43 +51,72 @@ if (isset($_POST['search'])) {
                 <?php endif; ?>
             </div>
 
-            <table border="1" width="100%" class="table table-secondary">
-                <thead>
-                    <tr>
-                        <td>id</td>
-                        <td>Ordered by</td>
-                        <td>order</td>
-                        <td>size</td>
-                        <td>description</td>
-                        <td>depature</td>
-                        <td>Arrival</td>
-                        <td>collection Address</td>
-                        <td>delivery Address</td>
-                        <td colspan="2">operations</td>
-                    </tr>
-                </thead>
-
-                <tbody>
-
-                    <?php foreach ($orders as $order) : ?>
+            <div class="table-responsive">
+                <table border="1" width="100%" class="table table-bordered">
+                    <thead class="table-dark">
                         <tr>
-                            <td><?= $order['id']; ?></td>
-                            <td><?= $order['client']; ?></td>
-                            <td><?= $order['name']; ?></td>
-                            <td><?= $order['size']; ?></td>
-                            <td><?= $order['description']; ?></td>
-                            <td><?= $order['time_of_departure']; ?></td>
-                            <td><?= $order['time_of_arrival']; ?></td>
-                            <td><?= $order['collection_address']; ?></td>
-                            <td><?= $order['state_name']; ?></td>
-                            <td><a href="editOrder.php?id=<?= $order['id']; ?>" class="btn btn-primary btn-lg"><em class="fa-regular fa-pen-to-square"></em></a></td>
-                            <td><a href="deleteOrder.php?id=<?= $order['id']; ?>" class="btn btn-danger btn-lg"><em class="fa-regular fa-trash-can"></em></a></td>
+                            <td scope="col">id</td>
+                            <td scope="col">Ordered by</td>
+                            <td scope="col">order</td>
+                            <td scope="col">size</td>
+                            <td scope="col">description</td>
+                            <td scope="col">depature</td>
+                            <td scope="col">Arrival</td>
+                            <td scope="col">collection Address</td>
+                            <td scope="col">delivery Address</td>
+                            <td colspan="2" scope="col">operations</td>
                         </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
+                    </thead>
+
+                    <tbody class="table-stripped">
+
+                        <?php foreach ($orders as $order) : ?>
+                            <tr>
+                                <td scope="row"><?= $order['id']; ?></td>
+                                <td scope="row"><?= $order['client']; ?></td>
+                                <td scope="row"><?= $order['name']; ?></td>
+                                <td scope="row"><?= $order['size']; ?></td>
+                                <td scope="row"><?= $order['description']; ?></td>
+                                <td scope="row"><?= $order['time_of_departure']; ?></td>
+                                <td scope="row"><?= $order['time_of_arrival']; ?></td>
+                                <td scope="row"><?= $order['collection_address']; ?></td>
+                                <td scope="row"><?= $order['state_name']; ?></td>
+                                <td scope="row"><a href="editOrder.php?id=<?= $order['id']; ?>" class="btn btn-primary btn-lg"><em class="fa-regular fa-pen-to-square"></em></a></td>
+                                <td scope="row"><button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#deleteModal"><em class="fa-regular fa-trash-can"></em></button></td>
+                            </tr>
+
+                            <!-- delete modal -->
+                            <div class="modal fade" id="deleteModal" aria-labelledby="deleteModalLabel" aria-hidden="true" tabindex="-1" role="dialog">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title" id="deleteModalLabel">Caution!!</h1>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+
+                                        <div class="modal-body">
+                                            <h2 class="modal-title">Are you sure you want to delete this client?</h2>
+                                            <p>Please note changes will not be reversed.</p>
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">cancel</button>
+                                            <a href="deleteOrder.php?id=<?= $order['id']; ?>" type="button" class="btn btn-primary">delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- delete modal -->
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
         </section>
     </section>
     <!-- main container | start -->
+
+
 </main>
 <?php include_once "includes/footer.php"; ?>

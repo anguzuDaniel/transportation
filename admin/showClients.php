@@ -15,39 +15,40 @@ $orders = getAllOrders($conn);
 
     <!-- main container | start -->
     <section class="conatainer">
-        <h1 class="heading heading--primary">Dashboard</h1>
+        <h1 class="h1">Dashboard</h1>
 
         <!-- card displaying number -->
         <?php include_once "includes/cards.php"; ?>
         <!-- card displaying number -->
 
         <section class="conatainer">
-
-            <table border="1" width="100%" class="table table-secondary">
-                <thead>
-                    <tr>
-                        <td>id</td>
-                        <td>name</td>
-                        <td>email</td>
-                        <td>location</td>
-                        <td colspan="2">operations</td>
-                    </tr>
-                </thead>
-
-                <tbody>
-
-                    <?php foreach ($clients as $client) : ?>
+            <div class="table-responsive">
+                <table border="1" width="100%" class="table table-bordered">
+                    <thead class="table-dark">
                         <tr>
-                            <td><?= $client['id']; ?></td>
-                            <td><?= $client['name']; ?></td>
-                            <td><?= $client['email']; ?></td>
-                            <td><?= $client['state_name']; ?></td>
-                            <td><a href="editClient.php?id=<?= $client['id']; ?>" class="btn btn-primary btn-lg" role="button"><em class="fa-regular fa-pen-to-square"></em></a></td>
-                            <td><a href="deleteClient.php?id=<?= $client['id']; ?>" class="btn btn-danger btn-lg" role="button"><em class="fa-regular fa-trash-can"></em></a></td>
+                            <td scope="col">id</td>
+                            <td scope="col">name</td>
+                            <td scope="col">email</td>
+                            <td scope="col">location</td>
+                            <td colspan="2" scope="col">operations</td>
                         </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
+                    </thead>
+
+                    <tbody>
+
+                        <?php foreach ($clients as $client) : ?>
+                            <tr>
+                                <td scope="row"><?= $client['id']; ?></td>
+                                <td scope="row"><?= $client['name']; ?></td>
+                                <td scope="row"><?= $client['email']; ?></td>
+                                <td scope="row"><?= $client['state_name']; ?></td>
+                                <td scope="row"><a href="editClient.php?id=<?= $client['id']; ?>" class="btn btn-primary btn-lg" role="button"><em class="fa-regular fa-pen-to-square"></em></a></td>
+                                <td scope="row"><a href="deleteClient.php?id=<?= $client['id']; ?>" class="btn btn-danger btn-lg" role="button"><em class="fa-regular fa-trash-can"></em></a></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
         </section>
     </section>
     <!-- main container | start -->

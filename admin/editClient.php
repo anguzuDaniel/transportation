@@ -48,20 +48,19 @@ $btnName = "Edit client";
 
         <form method="post">
 
-            <div>
-                <label for="name">name</label>
-                <input type="text" name="name" value="<?php echo $row['name']; ?>" required>
+            <div class="form-group">
+                <label for="name" class="col-form-label">name</label>
+                <input type="text" name="name" value="<?php echo $row['name']; ?>" class="form-control" required>
             </div>
 
-            <div>
-                <label for="email">email</label>
-                <input type="email" name="email" value="<?php echo $row['email']; ?>" required>
+            <div class="form-group">
+                <label for="email" class="col-form-label">email</label>
+                <input type="email" name="email" class="form-control" value="<?php echo $row['email']; ?>" required>
             </div>
 
-            <div>
-                <label for="collection_address">client address</label>
-
-                <select name="collection_address" id="location">
+            <div class="form-group">
+                <label for="collection_address" class="col-form-label">client address</label>
+                <select name="collection_address" id="location" class="form-control">
                     <option value="<?= $row['location']; ?>" selected><?= $row['state_name']; ?></option>
                     <?php foreach ($addresses as $address) : ?>
                         <option value="<?= $address['id']; ?>"><?= $address['name']; ?></option>
@@ -69,7 +68,7 @@ $btnName = "Edit client";
                 </select>
             </div>
 
-            <button type="submit" name="save" class="btn btn--primary"><?php echo $btnName; ?></button>
+            <button type="submit" name="save" class="btn btn-primary btn-block btn-lg btn-out-primary"><?php echo $btnName; ?></button>
         </form>
 
     </section>
