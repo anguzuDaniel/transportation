@@ -29,13 +29,13 @@ if (isset($_POST['submit'])) {
 
         <form method="post">
             <div class="form-group">
-                <label for="email">email</label>
-                <input type="email" name="email" id="size" required class="">
+                <label for="email" class="col-form-label">email</label>
+                <input type="email" name="email" required class="form-control">
             </div>
 
             <div class="form-group">
-                <label for="password">password</label>
-                <input type="password" name="password" id="size" required>
+                <label for="password" class="col-form-label">password</label>
+                <input type="password" name="password" class="form-control" required>
             </div>
 
             <p class="paragraph paragraph--primary"><a href="changePassword.php">Forgot password</a></p>

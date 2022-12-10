@@ -3,12 +3,6 @@
     margin: 0;
     box-sizing: border-box;
 }
-html {
-    font-size: 62.5%;
-}
-body {
-    font-size: 1.8rem;
-}
 
 ul {
     list-style: none;
@@ -18,9 +12,4 @@ a {
     text-decoration: none;
 }
 
-input {
-    border: none;
-    outline: none;
-    border: 1px solid var(--input-border);
-}
 
