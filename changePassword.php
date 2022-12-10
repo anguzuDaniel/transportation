@@ -4,7 +4,7 @@
 <!-- main container | start -->
 <section class="login-wrapper">
 
-    <div class="login-container">
+    <div class="mx-auto" style="width: 300px;">
         <h1 class="heading heading--primary">Change Password</h1>
 
         <form action="" method="post">

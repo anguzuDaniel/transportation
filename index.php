@@ -24,7 +24,7 @@ if (isset($_POST['submit'])) {
 <!-- main container | start -->
 <section class="login-wrapper">
 
-    <div class="login-container">
+    <div class="mx-auto" style="width: 300px;">
         <h1 class="h1">Login</h1>
 
         <form method="post">

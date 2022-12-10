@@ -58,27 +58,27 @@ if (isset($_POST['save'])) {
                     <?php endforeach; ?>
                 </select>
 
-                <div>
+                <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" name="name" id="name" required value="<?= $o['name']; ?>">
                 </div>
 
-                <div>
+                <div class="form-group">
                     <label for="size">Size</label>
                     <input type="text" name="size" id="size" required value="<?= $o['size']; ?>">
                 </div>
 
-                <div>
+                <div class="form-group">
                     <label for="departure_time">departure time</label>
                     <input type="date" name="departure_time" id="size" required value="<?= $o['time_of_departure']; ?>">
                 </div>
 
-                <div>
+                <div class="form-group">
                     <label for="arrival_time">arrival time</label>
                     <input type="date" name="arrival_time" id="description" required value="<?= $o['time_of_arrival']; ?>">
                 </div>
 
-                <div>
+                <div class="form-group">
                     <label for="collection_address">collection address</label>
                     <select name="collection_address" id="collection_address">
                         <option value="<?= $o['collection_address']; ?>"><?= $o['collection_address']; ?></option>
@@ -88,7 +88,7 @@ if (isset($_POST['save'])) {
                     </select>
                 </div>
 
-                <div>
+                <div class="form-group">
                     <label for="delivery_address">delivery address</label>
                     <select name="delivery_address" id="delivery_address">
                         <option value="<?= $o['delivery_address']; ?>"><?= $o['delivery_address']; ?></option>
@@ -98,7 +98,7 @@ if (isset($_POST['save'])) {
                     </select>
                 </div>
 
-                <div>
+                <div class="form-group">
                     <label for="description">description</label>
                     <textarea name="description" id="" cols="30" rows="10" required style="resize: none;"><?= $o['description']; ?></textarea>
                 </div>

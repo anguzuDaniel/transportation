@@ -24,7 +24,7 @@ if (isset($_POST['search'])) {
     <!-- header navigation | end -->
 
     <!-- main container | start -->
-    <section class="conatainer">
+    <section class="mx-5 my-5">
         <h1>Dashboard</h1>
 
         <!-- card displaying number -->
@@ -34,7 +34,7 @@ if (isset($_POST['search'])) {
         <section class="conatainer">
 
 
-            <form method="post" class="form-inline my-2 my-lg-0">
+            <form method="post" class="form-inline">
                 <input type="search" name="search_tags" class="form-control" placeholder="search using key words">
                 <button type="submit" name="search" class="btn btn-outline-primary my-2 my-sm-0">search</button>
             </form>
@@ -51,20 +51,20 @@ if (isset($_POST['search'])) {
                 <?php endif; ?>
             </div>
 
-            <div class="table-responsive">
+            <div class="table-responsive my-5">
                 <table border="1" width="100%" class="table table-bordered">
                     <thead class="table-dark">
                         <tr>
-                            <td scope="col">id</td>
-                            <td scope="col">Ordered by</td>
-                            <td scope="col">order</td>
-                            <td scope="col">size</td>
-                            <td scope="col">description</td>
-                            <td scope="col">depature</td>
-                            <td scope="col">Arrival</td>
-                            <td scope="col">collection Address</td>
-                            <td scope="col">delivery Address</td>
-                            <td colspan="2" scope="col">operations</td>
+                            <td scope="col" class="py-4">id</td>
+                            <td scope="col" class="py-4">Ordered by</td>
+                            <td scope="col" class="py-4">order</td>
+                            <td scope="col" class="py-4">size</td>
+                            <td scope="col" class="py-4">description</td>
+                            <td scope="col" class="py-4">depature</td>
+                            <td scope="col" class="py-4">Arrival</td>
+                            <td scope="col" class="py-4">collection Address</td>
+                            <td scope="col" class="py-4">delivery Address</td>
+                            <td colspan="2" scope="col" class="py-4">operations</td>
                         </tr>
                     </thead>
 
@@ -72,17 +72,17 @@ if (isset($_POST['search'])) {
 
                         <?php foreach ($orders as $order) : ?>
                             <tr>
-                                <td scope="row"><?= $order['id']; ?></td>
-                                <td scope="row"><?= $order['client']; ?></td>
-                                <td scope="row"><?= $order['name']; ?></td>
-                                <td scope="row"><?= $order['size']; ?></td>
-                                <td scope="row"><?= $order['description']; ?></td>
-                                <td scope="row"><?= $order['time_of_departure']; ?></td>
-                                <td scope="row"><?= $order['time_of_arrival']; ?></td>
-                                <td scope="row"><?= $order['collection_address']; ?></td>
-                                <td scope="row"><?= $order['state_name']; ?></td>
-                                <td scope="row"><a href="editOrder.php?id=<?= $order['id']; ?>" class="btn btn-primary btn-lg"><em class="fa-regular fa-pen-to-square"></em></a></td>
-                                <td scope="row"><button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#deleteModal"><em class="fa-regular fa-trash-can"></em></button></td>
+                                <td scope="row" class="py-4"><?= $order['id']; ?></td>
+                                <td scope="row" class="py-4"><?= $order['client']; ?></td>
+                                <td scope="row" class="py-4"><?= $order['name']; ?></td>
+                                <td scope="row" class="py-4"><?= $order['size']; ?></td>
+                                <td scope="row" class="py-4"><?= $order['description']; ?></td>
+                                <td scope="row" class="py-4"><?= $order['time_of_departure']; ?></td>
+                                <td scope="row" class="py-4"><?= $order['time_of_arrival']; ?></td>
+                                <td scope="row" class="py-4"><?= $order['collection_address']; ?></td>
+                                <td scope="row" class="py-4"><?= $order['state_name']; ?></td>
+                                <td scope="row" class="py-4"><a href="editOrder.php?id=<?= $order['id']; ?>" class="btn btn-primary btn-lg"><em class="fa-regular fa-pen-to-square"></em></a></td>
+                                <td scope="row" class="py-4"><button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#deleteModal"><em class="fa-regular fa-trash-can"></em></button></td>
                             </tr>
 
                             <!-- delete modal -->

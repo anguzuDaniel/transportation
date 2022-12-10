@@ -44,7 +44,7 @@ $btnName = "Edit client";
     <!-- header navigation | end -->
 
     <!-- main container | start -->
-    <section class="conatainer">
+    <section class="mx-5 my-5">
 
         <form method="post">
 

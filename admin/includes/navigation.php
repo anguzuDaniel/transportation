@@ -1,4 +1,4 @@
-        <header class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <header class="navbar navbar-expand-lg navbar-dark bg-dark pb-4 pt-4 px-5">
             <h1 class="h1 navbar-brand">Admin</h1>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

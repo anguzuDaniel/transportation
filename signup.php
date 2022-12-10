@@ -26,31 +26,31 @@ if (isset($_POST['submit'])) {
 <!-- main container | start -->
 <section class="login-wrapper">
 
-    <div class="login-container">
-        <h1 class="heading heading--primary">Sign up</h1>
+    <div class="mx-auto" style="width: 300px;">
+        <h1 class="h1 mb-3">Sign up</h1>
 
         <form method="post">
             <div class="form-group">
                 <label for="first_name">first name</label>
-                <input type="text" name="first_name" id="size" required>
+                <input type="text" name="first_name" class="form-control" required>
             </div>
 
             <div class="form-group">
                 <label for="last_name">last name</label>
-                <input type="text" name="last_name" id="size" required>
+                <input type="text" name="last_name" class="form-control" required>
             </div>
 
             <div class="form-group">
                 <label for="email">email</label>
-                <input type="email" name="email" id="size" required>
+                <input type="email" name="email" class="form-control" required>
             </div>
 
             <div class="form-group">
                 <label for="password">password</label>
-                <input type="password" name="password" id="size" required>
+                <input type="password" name="password" class="form-control" required>
             </div>
 
-            <button type="submit" name="submit" class="btn btn-primary">Sign up</button>
+            <button type="submit" name="submit" class="btn btn-primary btn-block btn-lg btn-out-primary">Sign up</button>
         </form>
 
         <a href="index.php">login</a>
