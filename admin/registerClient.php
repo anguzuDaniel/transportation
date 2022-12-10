@@ -64,7 +64,7 @@ $btnName = "register client";
                 </select>
             </div>
 
-            <button type="submit" name="save"><?= $btnName; ?></button>
+            <button type="submit" name="save" class="btn btn-primary btn-lg"><?= $btnName; ?></button>
         </form>
     </section>
     <!-- main container | start -->

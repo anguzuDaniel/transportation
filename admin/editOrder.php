@@ -103,7 +103,7 @@ if (isset($_POST['save'])) {
                     <textarea name="description" id="" cols="30" rows="10" required style="resize: none;"><?= $o['description']; ?></textarea>
                 </div>
 
-                <button type="submit" name="save">edit order</button>
+                <button type="submit" name="save" class="btn btn--primary">edit order</button>
             <?php endforeach; ?>
         </form>
     </section>

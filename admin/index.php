@@ -34,7 +34,7 @@ if (isset($_POST['search'])) {
         <section class="conatainer">
 
 
-            <form method="post">
+            <form method="post" class="search">
                 <input type="search" name="search_tags" placeholder="search using key words">
                 <button type="submit" name="search">search</button>
             </form>
@@ -50,7 +50,7 @@ if (isset($_POST['search'])) {
                 <?php endif; ?>
             </div>
 
-            <table border="1" width="100%">
+            <table border="1" width="100%" class="table table">
                 <thead>
                     <tr>
                         <td>id</td>

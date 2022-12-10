@@ -90,7 +90,7 @@ if (isset($_POST['save'])) {
                 <textarea name="description" id="" cols="30" rows="10" required style="resize: none;"></textarea>
             </div>
 
-            <button type="submit" name="save">submit order</button>
+            <button type="submit" name="save" class="btn btn-primary btn-lg">submit order</button>
         </form>
     </section>
 </main>

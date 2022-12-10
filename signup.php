@@ -50,7 +50,7 @@ if (isset($_POST['submit'])) {
                 <input type="password" name="password" id="size" required>
             </div>
 
-            <button type="submit" name="submit" class="btn btn--primary">Sign up</button>
+            <button type="submit" name="submit" class="btn btn-primary">Sign up</button>
         </form>
 
         <a href="index.php">login</a>

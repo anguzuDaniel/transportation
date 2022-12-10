@@ -25,22 +25,22 @@ if (isset($_POST['submit'])) {
 <section class="login-wrapper">
 
     <div class="login-container">
-        <h1 class="heading heading--primary">Login</h1>
+        <h1 class="h1">Login</h1>
 
         <form method="post">
-            <div>
+            <div class="form-group">
                 <label for="email">email</label>
-                <input type="email" name="email" id="size" required>
+                <input type="email" name="email" id="size" required class="">
             </div>
 
-            <div>
+            <div class="form-group">
                 <label for="password">password</label>
                 <input type="password" name="password" id="size" required>
             </div>
 
             <p class="paragraph paragraph--primary"><a href="changePassword.php">Forgot password</a></p>
 
-            <button type="submit" name="submit" class="btn btn--primary">login</button>
+            <button type="submit" name="submit" class="btn btn-primary btn-lg btn-block btn-out-primary">login</button>
         </form>
 
         <a href="signup.php">Sign up</a>

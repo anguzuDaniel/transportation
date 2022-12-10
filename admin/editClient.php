@@ -69,7 +69,7 @@ $btnName = "Edit client";
                 </select>
             </div>
 
-            <button type="submit" name="save"><?php echo $btnName; ?></button>
+            <button type="submit" name="save" class="btn btn--primary"><?php echo $btnName; ?></button>
         </form>
 
     </section>

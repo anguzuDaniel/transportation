@@ -1,11 +1,29 @@
+/* design for the btns starts here */
 .btn {
     display: inline-block;
     border: none;
     cursor: pointer;
 }
 
-.btn--primary {
-    background-color: blue;
-    color: white;
-    padding: 1.25rem 1rem;
+/* design for the btns ends here */
+
+/* design for the table starts here */
+table {
+    border-collapse: collapse;
 }
+
+table td {
+    padding: 1rem;
+}
+/* design for the table ends here */
+
+
+/* design for the dashboard cards starts here */
+table {
+    border-collapse: collapse;
+}
+
+table td {
+    padding: 1rem;
+}
+/* design for the dashboard cards ends here */

@@ -19,7 +19,7 @@
                 <input type="password" name="size" id="size" required>
             </div>
 
-            <button type="submit" name="submit" class="btn btn--primary">change password</button>
+            <button type="submit" name="submit" class="btn btn-primary btn-lg btn-block btn-out-primary">change password</button>
         </form>
 
         <a href="index.php">back to login</a>
