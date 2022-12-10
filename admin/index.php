@@ -34,10 +34,11 @@ if (isset($_POST['search'])) {
         <section class="conatainer">
 
 
-            <form method="post" class="search">
-                <input type="search" name="search_tags" placeholder="search using key words">
-                <button type="submit" name="search">search</button>
+            <form method="post" class="search-group">
+                <input type="search" name="search_tags" class="form-control" placeholder="search using key words">
+                <button type="submit" name="search" class="btn btn-primary">search</button>
             </form>
+
             <div class="search_result">
                 <?php if (empty($searchResult)) : ?>
                     <p>No results with that tag, Search using a valid tag.</p>

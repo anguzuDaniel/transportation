@@ -9,11 +9,15 @@ html {
 }
 
 body {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
 }
 
 ul {
     list-style: none;
+}
+
+li a {
+    text-decoration: none;
 }
 
 a {

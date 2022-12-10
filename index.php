@@ -40,7 +40,7 @@ if (isset($_POST['submit'])) {
 
             <p class="paragraph paragraph--primary"><a href="changePassword.php">Forgot password</a></p>
 
-            <button type="submit" name="submit" class="btn btn-primary btn-lg btn-block btn-out-primary">login</button>
+            <button type="submit" name="submit" class="btn btn-primary btn-block btn-lg btn-out-primary">login</button>
         </form>
 
         <a href="signup.php">Sign up</a>

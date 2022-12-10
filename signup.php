@@ -30,22 +30,22 @@ if (isset($_POST['submit'])) {
         <h1 class="heading heading--primary">Sign up</h1>
 
         <form method="post">
-            <div>
+            <div class="form-group">
                 <label for="first_name">first name</label>
                 <input type="text" name="first_name" id="size" required>
             </div>
 
-            <div>
+            <div class="form-group">
                 <label for="last_name">last name</label>
                 <input type="text" name="last_name" id="size" required>
             </div>
 
-            <div>
+            <div class="form-group">
                 <label for="email">email</label>
                 <input type="email" name="email" id="size" required>
             </div>
 
-            <div>
+            <div class="form-group">
                 <label for="password">password</label>
                 <input type="password" name="password" id="size" required>
             </div>
