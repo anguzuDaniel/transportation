@@ -10,13 +10,13 @@
         <form action="" method="post">
 
             <div>
-                <label for="size">email</label>
-                <input type="email" name="size" id="size" required>
+                <label for="size" class="col-form-label">email</label>
+                <input type="email" name="size" class="form-control" required>
             </div>
 
             <div>
-                <label for="size">new password</label>
-                <input type="password" name="size" id="size" required>
+                <label for="size" class="col-form-label">new password</label>
+                <input type="password" name="size" class="form-control" required>
             </div>
 
             <button type="submit" name="submit" class="btn btn-primary btn-lg btn-block btn-out-primary">change password</button>

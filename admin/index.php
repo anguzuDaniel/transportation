@@ -50,7 +50,7 @@ if (isset($_POST['search'])) {
                 <?php endif; ?>
             </div>
 
-            <table border="1" width="100%" class="table table">
+            <table border="1" width="100%" class="table table-secondary">
                 <thead>
                     <tr>
                         <td>id</td>
@@ -79,8 +79,8 @@ if (isset($_POST['search'])) {
                             <td><?= $order['time_of_arrival']; ?></td>
                             <td><?= $order['collection_address']; ?></td>
                             <td><?= $order['state_name']; ?></td>
-                            <td><a href="editOrder.php?id=<?= $order['id']; ?>">edit</a></td>
-                            <td><a href="deleteOrder.php?id=<?= $order['id']; ?>">delete</a></td>
+                            <td><a href="editOrder.php?id=<?= $order['id']; ?>" class="btn btn-primary btn-lg"><em class="fa-regular fa-pen-to-square"></em></a></td>
+                            <td><a href="deleteOrder.php?id=<?= $order['id']; ?>" class="btn btn-danger btn-lg"><em class="fa-regular fa-trash-can"></em></a></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

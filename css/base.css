@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.8rem;
+}
+
 ul {
     list-style: none;
 }
@@ -11,5 +19,4 @@ ul {
 a {
     text-decoration: none;
 }
-
 

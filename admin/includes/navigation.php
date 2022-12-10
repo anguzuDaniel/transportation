@@ -1,4 +1,4 @@
-        <header>
+        <header class="navigation nav-primary">
             <nav>
                 <ul>
                     <li><a href="index.php">Dashboard</a></li>
