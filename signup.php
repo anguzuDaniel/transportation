@@ -31,9 +31,10 @@ $link_name = "login";
 <section class="login-wrapper">
 
     <div class="mx-auto" style="width: 400px;">
-        <h1 class="h1 mb-3">Sign up</h1>
 
-        <form method="post" class="my-4">
+        <form method="post" class="my-4 p-5 bg-light">
+            <h1 class="display-1 mb-5">Sign up</h1>
+
             <div class="form-group mb-3">
                 <label class="col-form-label mb-3" for="first_name">First name</label>
                 <input type="text" name="first_name" class="form-control py-4 px-4" required placeholder="First name">
@@ -57,7 +58,7 @@ $link_name = "login";
             <button type="submit" name="submit" class="btn btn-primary btn-block btn-lg btn-out-primary py-3 px-5 w-100 my-3">Sign up</button>
         </form>
 
-        
+
     </div>
 </section>
 <!-- main container | start -->

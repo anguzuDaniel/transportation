@@ -29,9 +29,9 @@ $link_name = "Sign up";
 <section class="login-wrapper">
 
     <div class="mx-auto" style="width: 400px;">
-        <h1 class="h1">Login</h1>
 
-        <form method="post" class="my-4">
+        <form method="post" class="my-4 p-5 bg-light">
+            <h1 class="display-1 mb-5">Login</h1>
             <div class="form-group mb-3">
                 <label for="email" class="col-form-label mb-3">Email</label>
                 <input type="email" name="email" required class="form-control  py-4 px-4" placeholder="Email">

@@ -61,7 +61,7 @@ $btnName = "Edit client";
         <div class="form-group">
             <label for="collection_address" class="col-form-label">client address</label>
             <select name="collection_address" id="location" class="form-control py-4">
-                <option value="<?= $row['location']; ?>" selected><?= $row['state_name']; ?></option>
+                <option value=""><?= $row['state_name']; ?></option>
                 <?php foreach ($addresses as $address) : ?>
                     <option value="<?= $address['id']; ?>"><?= $address['name']; ?></option>
                 <?php endforeach; ?>
