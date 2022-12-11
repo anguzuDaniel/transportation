@@ -1,3 +1,5 @@
 h1 {
-    font-size: 3rem;
+    font-size: clamp(2.14rem,1.74rem + 1.99vw,3.16rem);
+    line-height: 1;
+    font-family: notulen_serif_displayXBd,serif;
 }

@@ -27,7 +27,7 @@ if (isset($_POST['save'])) {
     if (!$order) {
         echo "Order was not processed, please try again later";
     } else {
-        header("Location: showOrders.php");
+        header("Location: index.php");
     }
 }
 ?>
@@ -38,9 +38,10 @@ if (isset($_POST['save'])) {
 <!-- header navigation | end -->
 
 <section class="mx-2 my-2">
-    <h1 class="display-1 my-5 font-weight-bold">Create Order</h1>
 
-    <form method="post" class="bg-light p-5 border">
+    <form method="post" class="bg-light p-5 py-5 my-5 border">
+        <h1 class="display-1 mb-5 font-weight-bold">Create Order</h1>
+
         <div class="form-group col-sm mb-5">
             <label class="col-form-label mb-3" for="client_name">Client name</label>
             <select name="client_name" id="" class="form-control px-4 py-4" required>

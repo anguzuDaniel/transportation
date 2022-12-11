@@ -1,4 +1,4 @@
-<nav class="navbar  navbar-dark bg-dark pb-4 pt-4 px-5 justify-content-center">
+<nav class="navbar  navbar-dark bg-dark pb-4 pt-4 px-5">
     <a class="navbar-brand display-3 text-light">
         <h1>Admin</h1>
     </a>
@@ -9,3 +9,4 @@
         </ul>
     </div>
 </nav>
+

@@ -7,9 +7,24 @@
 
 .admin-wrapper {
     margin-top: 10rem;
+    margin-bottom: 5rem;
     padding-inline: 2rem;
 }
 
 label {
+    font-weight: bold;
+}
+
+.admin-card {
+    display: flex;
+    justify-content: center;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+table, form {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+thead {
     font-weight: bold;
 }

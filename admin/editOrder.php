@@ -46,10 +46,10 @@ if (isset($_POST['save'])) {
 <?php include_once "./includes/navigation.php"; ?>
 <!-- header navigation | end -->
 
-<section class="mx-5 my-5">
-    <h1 class="display-1 my-5 font-weight-bold">Edit Order</h1>
+<section class="">
 
     <form method="post" class="bg-light p-5">
+        <h1 class="display-1 my-5 font-weight-bold">Edit Order</h1>
 
         <?php foreach ($order as $o) : ?>
             <label class="col-form-label" for="client_name">client name</label>
@@ -112,7 +112,7 @@ if (isset($_POST['save'])) {
                 </div>
             </div>
 
-            <button type="submit" name="save" class="btn btn--primary">edit order</button>
+            <button type="submit" name="save" class="btn btn-primary btn-lg py-3 px-5 mt-4">edit order</button>
         <?php endforeach; ?>
     </form>
 </section>

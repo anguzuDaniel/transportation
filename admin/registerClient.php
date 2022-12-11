@@ -36,10 +36,11 @@ if (isset($_POST['save'])) {
 <!-- header navigation | end -->
 
 <!-- main container | start -->
-<section class="mx-5 my-5">
-    <h1 class="display-1 my-5 font-weight-bold">Register Client</h1>
+<section class="">
 
-    <form method="post" class="bg-light p-5 border">
+    <form method="post" class="bg-light p-5 my-5 border">
+        <h1 class="display-1 mb-5 font-weight-bold">Register Client</h1>
+
         <div class="form-group mb-4">
             <label class="col-form-label mb-3" for="name">Name</label>
             <input type="text" name="name" value="<?= $clientName; ?>" class="form-control py-4" required>

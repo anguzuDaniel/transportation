@@ -44,9 +44,9 @@ $btnName = "Edit client";
 
 <!-- main container | start -->
 <section class="mx-5 my-5">
-    <h1 class="display-1 my-5 font-weight-bold">Edit Client</h1>
 
     <form method="post" class="bg-light p-5">
+        <h1 class="display-1 mb-5 font-weight-bold">Edit Client</h1>
 
         <div class="form-group">
             <label for="name" class="col-form-label">name</label>
