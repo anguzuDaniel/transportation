@@ -39,7 +39,7 @@ if (isset($_POST['save'])) {
 
 <section class="mx-2 my-2">
 
-    <form method="post" class="bg-light p-5 py-5 my-5 border">
+    <form method="post" class="bg-light p-5 py-5 my-5">
         <h1 class="display-1 mb-5 font-weight-bold">Create Order</h1>
 
         <div class="form-group col-sm mb-5">

@@ -17,6 +17,34 @@ function createUser($conn, $firstname, $lastname, $email, $password)
     return $stmt->execute();
 }
 
+function getUserByEmail($conn, $email, $column = "*")
+{
+    $sql = "SELECT $column FROM users WHERE email = :email";
+
+    $stmt = $conn->prepare($sql);
+
+
+    $stmt->bindValue(':email', $email, PDO::PARAM_STR);
+
+    if ($stmt->execute()) {
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+}
+
+function resetPassword($conn, $id, $newPassword)
+{
+    $sql = "UPDATE users SET password = :password WHERE id = :id";
+
+    $stmt = $conn->prepare($sql);
+
+    $hashedPassword = password_hash($newPassword, PASSWORD_BCRYPT);
+
+    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+    $stmt->bindValue(':password', $hashedPassword, PDO::PARAM_STR);
+
+    return $stmt->execute();
+}
+
 function authenticateUser($conn, $email, $password)
 {
     $sql = 'SELECT * FROM users WHERE email = :email ';

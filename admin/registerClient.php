@@ -38,7 +38,7 @@ if (isset($_POST['save'])) {
 <!-- main container | start -->
 <section class="">
 
-    <form method="post" class="bg-light p-5 my-5 border">
+    <form method="post" class="bg-light p-5 my-5">
         <h1 class="display-1 mb-5 font-weight-bold">Register Client</h1>
 
         <div class="form-group mb-4">

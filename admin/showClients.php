@@ -18,7 +18,7 @@ $orders = getAllOrders($conn);
 
     <section class="conatainer">
         <div class="table-responsive my-5">
-            <table border="1" width="100%" class="table bg-light table-striped p-5">
+            <table width="100%" class="table bg-light table-striped p-5">
                 <thead class="font-weight-bold">
                     <tr>
                         <td scope="col" class="py-5 pl-4">id</td>
@@ -42,6 +42,13 @@ $orders = getAllOrders($conn);
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
+                <!-- <tfoot>
+                    <tr>
+                        <td colspan="9"><a href="" type="button" class="btn btn-primary btn-lg py-3 px-5 mt-4">previous</a>
+                            <a href="" type="button" class="btn btn-primary btn-lg py-3 px-5 mt-4">next</a>
+                        </td>
+                    </tr>
+                </tfoot> -->
             </table>
         </div>
     </section>

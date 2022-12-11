@@ -42,7 +42,7 @@ $link_name = "Sign up";
                 <input type="password" name="password" class="form-control py-4 px-4" required placeholder="Password">
             </div>
 
-            <p class="p"><a href="changePassword.php">Forgot password?</a></p>
+            <p class="p"><a href="resetPassword.php">Forgot password?</a></p>
 
             <button type="submit" name="submit" class="btn btn-primary btn-lg btn-out-primary py-3 px-5 w-100 my-3">login</button>
         </form>

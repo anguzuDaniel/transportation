@@ -9,7 +9,6 @@ $clients = getAllClients($conn);
 
 $orders = getAllOrders($conn);
 
-
 if (isset($_POST['search'])) {
     $tag = $_POST['search_tags'];
 
@@ -22,11 +21,6 @@ if (isset($_POST['search'])) {
 <!-- header navigation | start -->
 <?php include_once "includes/navigation.php"; ?>
 <!-- header navigation | end -->
-
-
-<!-- <div class=" pt-4"></div>
-</main>
-Main layout -->
 
 <!-- main container | start -->
 <section>
@@ -64,7 +58,7 @@ Main layout -->
                         <?php else : ?>
                             <?php foreach ($orders as $order) : ?>
                                 <tr>
-                                    <td scope="row" class="py-5"><?= $order['client']; ?></td>
+                                    <td scope="row" class="py-5"><?= $order['client_name']; ?></td>
                                     <td scope="row" class="py-5"><?= $order['name']; ?></td>
                                     <td scope="row" class="py-5"><?= $order['size']; ?></td>
                                     <td scope="row" class="py-5"><?= $order['description']; ?></td>

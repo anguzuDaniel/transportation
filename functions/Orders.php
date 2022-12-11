@@ -75,10 +75,10 @@ function getAllOrders($conn)
             o.collection_address, 
             o.delivery_address, 
             s.name AS state_name, 
-            c.name AS client 
+            c.name AS client_name 
             FROM orders AS o
             LEFT JOIN clients AS c ON o.id = c.id
-            INNER JOIN states AS s ON o.delivery_address = s.id ";
+            LEFT JOIN states AS s ON o.delivery_address = s.id ";
 
     $stmt = $conn->prepare($sql);
 
